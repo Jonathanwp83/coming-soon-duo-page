@@ -59,16 +59,18 @@ const Index = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
-          <a 
-            href="mailto:contact@plastiqueshorizon.com"
-            className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
-            onClick={() => console.log('Email link clicked')}
+          <button 
+            onClick={() => {
+              console.log('Email button clicked');
+              window.location.href = 'mailto:contact@plastiqueshorizon.com';
+            }}
+            className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium cursor-pointer"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
             contact@plastiqueshorizon.com
-          </a>
+          </button>
           
           <a 
             href={`tel:${content[language].phone}`}
