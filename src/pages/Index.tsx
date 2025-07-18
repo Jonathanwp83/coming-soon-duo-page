@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { LanguageToggle } from "@/components/LanguageToggle";
 
@@ -7,12 +8,12 @@ const Index = () => {
   const content = {
     en: {
       title: "Under Construction",
-      message: "We are working hard to bring you something amazing. Stay tuned!",
+      message: "Due to important expansion, Plastiques Horizon is currently working on bringing its new website to life to offer clients an enhanced user experience. We are working hard to bring you something amazing. Stay tuned!",
       contact: "For more information, please contact us."
     },
     fr: {
       title: "Site en Construction",
-      message: "Nous travaillons dur pour vous apporter quelque chose d'incroyable. Restez à l'écoute !",
+      message: "En raison d'une expansion importante, Plastiques Horizon travaille actuellement à donner vie à son nouveau site web pour offrir à ses clients une expérience utilisateur améliorée. Nous travaillons dur pour vous apporter quelque chose d'incroyable. Restez à l'écoute !",
       contact: "Pour plus d'informations, veuillez nous contacter."
     }
   };
