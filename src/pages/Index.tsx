@@ -65,12 +65,12 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background relative">
+    <div className="min-h-screen flex flex-col justify-start bg-background relative">
       <div className="absolute top-6 right-6">
         <LanguageToggle language={language} onLanguageChange={setLanguage} />
       </div>
       
-      <div className="text-center max-w-2xl mx-auto px-6">
+      <div className="pt-20 text-center max-w-2xl mx-auto px-6 flex-1 flex flex-col justify-center">
         <div className="mb-8">
           <img 
             src="/lovable-uploads/a35fb5a0-816d-478f-9f17-caf94592fba8.png" 
