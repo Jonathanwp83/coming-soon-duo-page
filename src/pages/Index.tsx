@@ -8,12 +8,12 @@ const Index = () => {
   const content = {
     en: {
       title: "Under Construction",
-      message: "Due to important expansion, Plastiques Horizon is currently working on bringing its new website to life to offer clients an enhanced user experience. We are working hard to bring you something amazing. Stay tuned!",
+      message: "We are currently experiencing significant growth and are developing our new digital platform to deliver an exceptional user experience. Our team is dedicated to creating innovative solutions that will better serve our valued clients. Thank you for your patience as we prepare to launch.",
       contact: "For more information, please contact us."
     },
     fr: {
       title: "Site en Construction",
-      message: "En raison d'une expansion importante, Plastiques Horizon travaille actuellement à donner vie à son nouveau site web pour offrir à ses clients une expérience utilisateur améliorée. Nous travaillons dur pour vous apporter quelque chose d'incroyable. Restez à l'écoute !",
+      message: "Nous connaissons actuellement une croissance importante et développons notre nouvelle plateforme numérique pour offrir une expérience utilisateur exceptionnelle. Notre équipe se consacre à la création de solutions innovantes qui serviront mieux nos précieux clients. Merci de votre patience pendant que nous nous préparons au lancement.",
       contact: "Pour plus d'informations, veuillez nous contacter."
     }
   };
