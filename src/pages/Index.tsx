@@ -3,7 +3,14 @@ import { useState } from "react";
 import { LanguageToggle } from "@/components/LanguageToggle";
 
 const Index = () => {
-  const [language, setLanguage] = useState<'en' | 'fr'>('fr');
+  const detectBrowserLanguage = (): 'en' | 'fr' => {
+    const browserLang = navigator.language.toLowerCase();
+    if (browserLang.startsWith('en')) return 'en';
+    if (browserLang.startsWith('fr')) return 'fr';
+    return 'fr'; // Default fallback
+  };
+
+  const [language, setLanguage] = useState<'en' | 'fr'>(detectBrowserLanguage());
 
   const content = {
     en: {
