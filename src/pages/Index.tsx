@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { LanguageToggle } from "@/components/LanguageToggle";
+import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
   const detectBrowserLanguage = (): 'en' | 'fr' => {
@@ -11,6 +12,40 @@ const Index = () => {
   };
 
   const [language, setLanguage] = useState<'en' | 'fr'>(detectBrowserLanguage());
+  const { toast } = useToast();
+
+  const handleEmailClick = async () => {
+    console.log('Email button clicked');
+    
+    // Try mailto first
+    window.location.href = 'mailto:contact@plastiqueshorizon.com';
+    
+    // Fallback: Show toast with copy functionality after a delay
+    setTimeout(() => {
+      toast({
+        title: language === 'en' ? "Email Address" : "Adresse Courriel",
+        description: language === 'en' 
+          ? "Click to copy: contact@plastiqueshorizon.com" 
+          : "Cliquez pour copier : contact@plastiqueshorizon.com",
+        action: (
+          <button
+            onClick={() => {
+              navigator.clipboard.writeText('contact@plastiqueshorizon.com');
+              toast({
+                title: language === 'en' ? "Copied!" : "Copié!",
+                description: language === 'en' 
+                  ? "Email address copied to clipboard" 
+                  : "Adresse courriel copiée dans le presse-papiers"
+              });
+            }}
+            className="inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium ring-offset-background transition-colors hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+          >
+            {language === 'en' ? 'Copy' : 'Copier'}
+          </button>
+        ),
+      });
+    }, 2000);
+  };
 
   const content = {
     en: {
@@ -60,10 +95,7 @@ const Index = () => {
         
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
           <button 
-            onClick={() => {
-              console.log('Email button clicked');
-              window.location.href = 'mailto:contact@plastiqueshorizon.com';
-            }}
+            onClick={handleEmailClick}
             className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium cursor-pointer"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
